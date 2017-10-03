@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Crypto Dashbodard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src='{% static "js/base.js" %}'></script>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+ 	{% block extra_head %}
+
+ 	{% endblock extra_head %}
+</head>
+<body>
+<div class = "container-fluid">
+	<nav class="navbar">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand global-font" href="/">Crypto Dashboard</a>
+	    </div>
+	    <ul class="nav navbar-nav navbar-right">
+	    	{% if user.is_authenticated %}
+		    	<li><a href="#" class="global-font">{{ user.username }}</a></li>
+		    	<li><a href="/logout" class="global-font">Logout</a></li>
+	    	{% else %}
+		      	<li><a href="/signup" class="global-font">Signup</a></li>
+		      	<li><a href="/login" class="global-font">Login</a></li>
+	        {% endif %}
+	    </ul>
+	  </div>
+	</nav>
+	<div class="container">
+		{% block content %}
+
+		{% endblock content %}
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.btn.add-new-coin-button
+{
+  padding: 15px 20px 15px 20px;
+  color: #34495E;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.global-font
+{
+	color: #34495E;
+}

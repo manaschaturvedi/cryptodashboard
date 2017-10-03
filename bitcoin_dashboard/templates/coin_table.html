@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-sm-3">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3 style="text-align:center;">{{total_investment}}</h3>
+        <h4 style="text-align:center;">Total investment</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3 style="text-align:center;">{{total_investment_value}}</h3>
+        <h4 style="text-align:center;">Current investment value</h4>
+      </div>
+    </div>
+  </div>
+</div><br>
+<div class="row">
+	<div class="col-sm-8">
+		<table class="table table-striped">
+			<thead>
+			  <tr>
+			    <th>Coin</th>
+			    <th>Total investment</th>
+			    <th>Units owned</th>
+			    <th>Current investment worth</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  {% for e in coins_data %}
+			      <tr>
+			        <td>{{e.coin_name}}</td>
+			        <td>{{e.total_investment}}</td>
+			        <td>{{e.units_owned}}</td>
+			        <td>{{e.investment_value}}</td>
+			      </tr>
+			  {% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
